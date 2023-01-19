@@ -1,13 +1,25 @@
 package farrel.putra.util;
 
 import farrel.putra.annotation.NotBlank;
+import farrel.putra.data.LoginRequest;
 import farrel.putra.error.BlankException;
+import farrel.putra.error.ValidationException;
 
 import java.lang.reflect.Field;
 
 public class ValidationUtil {
 
-//    public static void validate() {}
+    public static void validate(LoginRequest loginRequest) throws ValidationException, NullPointerException {
+        if (loginRequest.getUsername() == null) {
+            throw new NullPointerException("Username is null");
+        } else if (loginRequest.getUsername().isBlank()) {
+            throw new ValidationException("Username is blank");
+        } else if (loginRequest.getPassword() == null) {
+            throw new NullPointerException("Password is null");
+        } else if (loginRequest.getPassword().isBlank()) {
+            throw new ValidationException("Password is blank");
+        }
+    }
 
     public static void validationReflection(Object object) {
         Class aClass = object.getClass();
