@@ -8,8 +8,8 @@ public class ValidationApp {
     public static void main(String[] args) throws ValidationException {
 
         //LoginRequest loginRequest = new LoginRequest(null, null);
-        //LoginRequest loginRequest = new LoginRequest("Farrel", "rahasia");
-        LoginRequest loginRequest = new LoginRequest(null, "rahasia");
+        LoginRequest loginRequest = new LoginRequest("Farrel", "rahasia");
+        //LoginRequest loginRequest = new LoginRequest(null, "rahasia");
         //LoginRequest loginRequest = new LoginRequest("  ", "rahasia");
 
 //        try {
@@ -29,6 +29,14 @@ public class ValidationApp {
         } finally {
             System.out.println("Selalu di eksekusi");
         }
+
+
+        System.out.println("\n==========\n");
+
+
+        LoginRequest loginRequest2 = new LoginRequest(null, null);
+        ValidationUtil.validateRuntime(loginRequest2);
+        System.out.println("Sukses");
 
     }
 }
