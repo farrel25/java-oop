@@ -8,8 +8,8 @@ public class ValidationApp {
     public static void main(String[] args) throws ValidationException {
 
         //LoginRequest loginRequest = new LoginRequest(null, null);
-        LoginRequest loginRequest = new LoginRequest("Farrel", "rahasia");
-        //LoginRequest loginRequest = new LoginRequest(null, "rahasia");
+        //LoginRequest loginRequest = new LoginRequest("Farrel", "rahasia");
+        LoginRequest loginRequest = new LoginRequest(null, "rahasia");
         //LoginRequest loginRequest = new LoginRequest("  ", "rahasia");
 
 //        try {
@@ -26,6 +26,7 @@ public class ValidationApp {
             System.out.println("Data valid");
         } catch (ValidationException | NullPointerException exception) {
             System.out.println("Terjadi error: " + exception.getMessage());
+            exception.printStackTrace();
         } finally {
             System.out.println("Selalu di eksekusi");
         }
@@ -34,7 +35,7 @@ public class ValidationApp {
         System.out.println("\n==========\n");
 
 
-        LoginRequest loginRequest2 = new LoginRequest(null, null);
+        LoginRequest loginRequest2 = new LoginRequest("Farrel", null);
         ValidationUtil.validateRuntime(loginRequest2);
         System.out.println("Sukses");
 

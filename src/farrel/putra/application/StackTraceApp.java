@@ -10,7 +10,7 @@ public class StackTraceApp {
 //            System.out.println(names[100]);
 //        } catch (Throwable throwable) {
 //            StackTraceElement[] stackTraceElements = throwable.getStackTrace();
-//
+//            System.out.println("throwable.getMessage(): " + throwable.getMessage());
 //            throwable.printStackTrace();
 //        }
 
